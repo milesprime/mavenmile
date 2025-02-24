@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+      }
+      .content {
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .content p {
+        margin: 10px 0;
+      }
+      .order-details {
+        margin: 20px 0;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+      }
+      .order-item {
+        margin-bottom: 10px;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background: #f4f4f4;
+        border-radius: 0 0 10px 10px;
+        font-size: 14px;
+        color: #777;
+      }
+      .order-id {
+        color: #333;
+        font-weight: bold;
+      }
+      .total-amount {
+        color: #007bff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Order Confirmation</h1>
+      </div>
+      <div class="content">
+        <p>Hi {{firstName}},</p>
+        <p>
+          Thank you for your order! We are processing it and will update you
+          once it's on the way.
+        </p>
+        <div class="order-details">
+          <p><strong>Order Date:</strong> {{orderDate}}</p>
+          <p>
+            <strong>Order ID:</strong> <span class="order-id">{{orderId}}</span>
+          </p>
+          <h3>Order Details:</h3>
+          {{#each orderDetails}}
+          <div class="order-item">
+            <p><strong>Product ID:</strong> {{this.productId}}</p>
+            <p><strong>Quantity:</strong> {{this.quantity}}</p>
+            <p><strong>Price:</strong> ${{this.price}}</p>
+          </div>
+          {{/each}}
+          <p>
+            <strong>Total Amount:</strong>
+            <span class="total-amount">${{totalAmount}}</span>
+          </p>
+        </div>
+        <p>
+          If you have any questions or need further assistance, feel free to
+          contact our support team.
+        </p>
+        <p>Best regards,<br />The UpTech Team</p>
+      </div>
+      <div class="footer">
+        <p>UpTech Inc. | All Rights Reserved</p>
+      </div>
+    </div>
+  </body>
+</html>
