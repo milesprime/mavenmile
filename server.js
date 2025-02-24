@@ -65,6 +65,7 @@ app.get("/", (req, res) => {
   res.send(`
     <h1>Uptech E-commerce API Documentation</h1>
     <p>The API is live and ready to use. Below is the list of available endpoints:</p>
+    <a href="https://github.com/milesprime/mavenmile.git>Ecommerce API on Github</a>
     <table border="1" cellpadding="10" cellspacing="0">
       <thead>
         <tr>
